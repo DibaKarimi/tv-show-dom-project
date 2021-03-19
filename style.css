@@ -1,3 +1,20 @@
+body{
+  background-color: rgb(250, 250, 250);
+}
 #root {
-  color: red;
+  color: black;
+}
+section{
+  text-align: center;
+}
+div{
+  text-align: center;
+}
+img{
+  width: 95%;
+}
+p{
+  padding: 7px 1px;
+  text-align: justify;
+  width: 95%;
 }

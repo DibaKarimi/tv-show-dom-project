@@ -1,20 +1,38 @@
-body{
-  background-color: rgb(250, 250, 250);
+body {
+  background-color: #181818;
+  color: white;
 }
-#root {
-  color: black;
+
+#btn {
+  background-color: #E23923;
+  color: white;
 }
-section{
+
+h3{
+  color: #E23923;
+  cursor: pointer;
+}
+#titleOfEpisode{
+  height: 48px;
+}
+section {
   text-align: center;
 }
-div{
+div {
   text-align: center;
 }
-img{
-  width: 95%;
-}
-p{
+p {
   padding: 7px 1px;
   text-align: justify;
   width: 95%;
+}
+.showImages {
+  width: 50px;
+  object-fit: contain;
+}
+#filterSection {
+  background-color: rgb(0, 0, 0);
+}
+#searchSection {
+  background-color: rgb(0, 0, 0);
 }

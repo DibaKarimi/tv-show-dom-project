@@ -1,3 +1,38 @@
-#root {
-  color: red;
+body {
+  background-color: #181818;
+  color: white;
+}
+
+#btn {
+  background-color: #E23923;
+  color: white;
+}
+
+h3{
+  color: #E23923;
+  cursor: pointer;
+}
+#titleOfEpisode{
+  height: 48px;
+}
+section {
+  text-align: center;
+}
+div {
+  text-align: center;
+}
+p {
+  padding: 7px 1px;
+  text-align: justify;
+  width: 95%;
+}
+.showImages {
+  width: 50px;
+  object-fit: contain;
+}
+#filterSection {
+  background-color: rgb(0, 0, 0);
+}
+#searchSection {
+  background-color: rgb(0, 0, 0);
 }

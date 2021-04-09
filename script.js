@@ -323,6 +323,10 @@ function fillSectionOfEpisodes(episodeList) {
 // Fill the dropdown of shows
 function fillSelectOfShows() {
   let SelectElement = document.getElementById("showSelect");
+  let optionElement = document.createElement("option");
+  optionElement.innerHTML = "Choose show";
+  optionElement.value = "0";
+  SelectElement.append(optionElement);
   let allShows = getAllShows();
   allShows.sort((a, b) => (a.name > b.name ? 1 : -1));
   allShows.map((show) => {
@@ -332,10 +336,12 @@ function fillSelectOfShows() {
     SelectElement.appendChild(optionElement);
   });
   SelectElement.addEventListener("change", function () {
-    let url = `https://api.tvmaze.com/shows/${this.value}/episodes`;
-    let episodeSectionElement = document.getElementById("displayEpisode");
-    removeChild(episodeSectionElement);
-    fetchEpisodes(url);
+    if (this.value != "0") {
+      let url = `https://api.tvmaze.com/shows/${this.value}/episodes`;
+      let episodeSectionElement = document.getElementById("displayEpisode");
+      removeChild(episodeSectionElement);
+      fetchEpisodes(url);
+    }
   });
 }
 
@@ -351,7 +357,9 @@ function fillShowsDropDown() {
   let filterKey = document.getElementById("filterKey").value.toLowerCase();
   let filteredShows = filterKey == "" ? getAllShows() : filterShows(filterKey);
   filteredShows.sort((a, b) => (a.name > b.name ? 1 : -1));
-  document.getElementById("countOfShows").innerHTML = `Found ${filteredShows.length}/${getAllShows().length} show's`;
+  document.getElementById("countOfShows").innerHTML = `Found ${
+    filteredShows.length
+  }/${getAllShows().length} show's`;
   let SelectElement = document.getElementById("filteredShows");
   removeChild(SelectElement);
   let firstOptionElement = document.createElement("option");
